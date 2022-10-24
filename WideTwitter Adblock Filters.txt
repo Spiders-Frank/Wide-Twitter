@@ -1,3 +1,4 @@
+[adblock 2.0]
 ! Title: Twitter Wide mode
 ! Description: Forces twitter to use available screen space as much as possible
 ! Tested at 1920x1080
