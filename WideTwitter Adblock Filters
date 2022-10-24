@@ -1,4 +1,4 @@
-! Twitter wide mode____________________________________________________________
+! Title: Twitter Wide mode
 ! Description: Forces twitter to use available screen space as much as possible
 ! Tested at 1920x1080
 
@@ -44,5 +44,3 @@ twitter.com##[aria-label="Section details"]:style(margin: 0px !important; width:
 
 ! Notification_________________________
 twitter.com##div:has(>section>div[aria-label="Timeline: Notifications"]):style(max-width: 69vw !important;)
-
-! Twitter wide mode end________________________________________________________
