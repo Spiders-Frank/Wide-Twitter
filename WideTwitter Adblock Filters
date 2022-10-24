@@ -1,0 +1,48 @@
+! Twitter wide mode____________________________________________________________
+! Description: Forces twitter to use available screen space as much as possible
+! Tested at 1920x1080
+
+twitter.com##[data-testid="primaryColumn"]:style(max-width: 69vw !important;)
+twitter.com##[role="main"]>div:style(width: 85vw !important;)
+twitter.com##[role="main"]>div>div>div:style(justify-content: flex-start !important;)
+
+! Left column__________________________
+twitter.com##[role="banner"]:style(align-items: flex-start !important; max-width: 14vw !important; flex-grow: 0.3 !important;)
+
+! Right column_________________________
+twitter.com##[data-testid="sidebarColumn"]:style( margin-right: 20px !important; margin-left: 20px !important; max-width: 14vw !important;)
+twitter.com##[data-testid="sidebarColumn"]>div>div:nth-of-type(2):style( max-width: 14vw !important;)
+twitter.com##[data-testid="sidebarColumn"]>div>div>div>div>div>div>div:style( max-width: 14vw !important;)
+
+! Ensure's images can fit onscreen_____
+twitter.com##div:has(>div>div[data-testid="tweetPhoto"]):style(max-height:75vh;)
+twitter.com##div[style^="padding-bottom:"]:has(~div>div[data-testid="tweetPhoto"]):not(div[data-testid="testCondensedMedia"]>div>div>div>div>a>div>div[style^="padding-bottom:"]):style(padding-bottom: 75vh !important;)
+! This doesn't apply to multi image tweets.
+twitter.com##div[style^="padding-bottom:"]+div>div>div[style^="background-image"]:style(background-size: contain !important;)
+
+! Ensure's videos can fit onscreen_____
+twitter.com##div[aria-label="Embedded video"]>div[style^="background-image"]:style(background-size: contain !important;)
+twitter.com##div[data-testid="tweetPhoto"]>div>div[style^="padding-bottom:"]:style(padding-bottom: 75vh !important;)
+
+! Home timeline________________________
+twitter.com##[aria-label="Home timeline"]>div:nth-of-type(5):style(max-width: none !important;)
+
+! Profile______________________________
+twitter.com##div:has(>nav[aria-label="Profile timelines"]):style(max-width: none !important;)
+
+! Blocked Profile______________________
+twitter.com##div:has(>div[data-testid="emptyState"]):style(max-width: none !important;)
+
+! Thread_______________________________
+! Prevent reply box z-fighting with primaryColumn border.
+twitter.com##[data-testid="cellInnerDiv"]>div>div>div:nth-of-type(2):style( margin-right: 1px !important;)
+twitter.com##div:has(>div>div[data-testid="app-bar-back"]):style(max-width: none !important;)
+
+! Messages_____________________________
+twitter.com##[aria-label="Section navigation"]:style(margin: 0px !important; width: 50% !important; max-width: none !important;)
+twitter.com##[aria-label="Section details"]:style(margin: 0px !important; width: 50% !important; max-width: 100% !important;)
+
+! Notification_________________________
+twitter.com##div:has(>section>div[aria-label="Timeline: Notifications"]):style(max-width: 69vw !important;)
+
+! Twitter wide mode end________________________________________________________
